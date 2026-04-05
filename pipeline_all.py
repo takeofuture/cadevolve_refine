@@ -21,7 +21,7 @@ import numpy as np
 import cadquery as cq  
 from sklearn.metrics.pairwise import cosine_similarity
 import concurrent.futures as cf
-from config import OPENAI_API_KEY
+from config import OPENAI_API_KEY, OPENAI_API_MODEL
 # choose ONE of the two – both solve the problem
 # mp.set_start_method("spawn",      force=True)    # independent interpreter
 # ────────────────────────────────────────────────────────────────
@@ -83,7 +83,7 @@ PASSED_VALID_DIR   = ROOT / "passed_validate_cases"
 FAILED_VALID_DIR   = ROOT / "failed_validate_cases"
 EMBED_MODEL       = "text-embedding-3-small"
 #LLM_MODEL         = "gpt-5-mini"               # chat + code model (same for vision requests)
-LLM_MODEL         = "gpt-5.4-2026-03-05"
+LLM_MODEL         = OPENAI_API_MODEL
 TOP_K             = 7                        # similar parts to retrieve
 SHAPES_PER_LEVEL  = 10                      # new shapes requested per level
 MAX_LEVELS        = 1                       # how many complexity levels to add
